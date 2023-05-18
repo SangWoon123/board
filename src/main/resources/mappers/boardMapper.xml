@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.tukorea.board.mapper.BoardMapper">
+
+<select id="getAllPosts" resultType="org.tukorea.board.domain.Post">
+        SELECT * FROM posts ORDER BY created_at DESC
+</select>
+
+<select id="getPostById" parameterType="int" resultType="org.tukorea.board.domain.Post">
+        SELECT * FROM posts WHERE id = #{postId}
+    </select>
+
+    <insert id="createPost" parameterType="org.tukorea.board.domain.Post">
+        INSERT INTO posts (title, content, author, created_at)
+        VALUES (#{title}, #{content}, #{author}, #{createdAt})
+    </insert>
+    
+    <update id="updatePost" parameterType="org.tukorea.board.domain.Post">
+        UPDATE posts SET title = #{title}, content = #{content} WHERE id = #{id}
+    </update>
+    
+    <delete id="deletePost" parameterType="int">
+        DELETE FROM posts WHERE id = #{postId}
+    </delete>
+    
+    <select id="searchPosts" parameterType="String" resultType="org.tukorea.board.domain.Post">
+        SELECT * FROM posts
+        WHERE title LIKE CONCAT('%', #{keyword}, '%') OR content LIKE CONCAT('%', #{keyword}, '%')
+        ORDER BY created_at DESC
+    </select>
+    
+  
+   
+	
+</mapper>  
+
