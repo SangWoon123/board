@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../fragment/logoutheader.jsp" %>
 
+
 <!-- 메인 컨텐츠 -->
 <div class="container-fluid mx-auto p-2 mt-5" style="max-width: 800px;">
   <!-- 검색 바 -->
@@ -8,7 +9,7 @@
     <nav class="navbar">
       <div class="container-fluid">
         <form class="d-flex" role="search" action="/myweb/board/search" method="get">
-          <input class="form-control me-2" type="search" placeholder="제목 + 이름" name="keyword" aria-label="Search">
+          <input class="form-control me-2" type="search" placeholder="제목 + 내" name="keyword" aria-label="Search">
           <button class="d-flex btn btn-outline-primary" type="submit">Search</button>
         </form>
       </div>
@@ -31,7 +32,7 @@
         <a href="/myweb/board/${post.id}/edit">${post.title}</a>
       </td>
       <td scope="row">${post.author}</td>
-      <td>${post.createdAt}</td>
+      <td scope="row">${post.createdAt}</td>
     </tr>
   </c:forEach>
 </tbody>

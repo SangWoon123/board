@@ -60,6 +60,20 @@ public class BoardRepositoryImpl implements BoardRepository{
 		// TODO Auto-generated method stub
 		return sqlSession.selectList(namespace+".searchPosts",keyword);
 	}
+	
+	@Override
+	public int getTotalPostsCount() {
+		return sqlSession.selectOne(namespace + ".getTotalPostsCount");
+    }
+
+	@Override
+    public List<Post> getPostsByPage(int startIndex, int pageSize) {
+		Map<String, Integer> parameters = new HashMap<String, Integer>();
+        parameters.put("startIndex", startIndex);
+        parameters.put("pageSize", pageSize);
+        return sqlSession.selectList(namespace + ".getPostsByPage", parameters);
+    }
+	
 
 
 }
