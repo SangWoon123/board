@@ -21,13 +21,14 @@ public class User {
 		this.email=email;
 	}
 	
-	public User() {
-		
-	}
 
 	public String getUsername() {
 		// TODO Auto-generated method stub
 		return this.username;
+	}
+	
+	public String getNickname() {
+		return nickname;
 	}
 
 	

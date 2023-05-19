@@ -8,6 +8,10 @@
 	<select id="findByUsername" resultType="org.tukorea.board.domain.User">
 		SELECT * FROM users WHERE username= #{username}
 	</select>
+	
+	<select id="findByNickname" resultType="org.tukorea.board.domain.User">
+		SELECT * FROM users WHERE nickname= #{nickname}
+	</select>
 
     <insert id="save" parameterType="org.tukorea.board.domain.User">
         INSERT INTO users (username, password, email, nickname)

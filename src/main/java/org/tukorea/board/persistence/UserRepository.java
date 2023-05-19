@@ -18,6 +18,10 @@ public class UserRepository {
 	public User findByUsername(String username) {
         return sqlSession.selectOne(namespace+ ".findByUsername",username);
     }
+	
+	public User findByNickname(String nickname) {
+		return sqlSession.selectOne(namespace+".findByNickname",nickname);
+	}
 
     public void save(User user) {
         sqlSession.insert(namespace+".save", user);
