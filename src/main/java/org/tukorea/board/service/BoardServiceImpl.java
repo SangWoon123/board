@@ -53,5 +53,13 @@ public class BoardServiceImpl implements BoardService{
 		// TODO Auto-generated method stub
 		return boardRepository.searchPost(keyword);
 	}
+	
+	public int getTotalPostsCount() {
+        return boardRepository.getTotalPostsCount();
+    }
+
+    public List<Post> getPostsByPage(int startIndex, int pageSize) {
+        return boardRepository.getPostsByPage(startIndex, pageSize);
+    }
 
 }

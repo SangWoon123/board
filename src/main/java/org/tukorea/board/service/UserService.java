@@ -14,6 +14,7 @@ public class UserService {
 	
 
 	// 인증
+	@Transactional 
 	public boolean authenticateUser(String username,String password) throws Exception {
 		
 		User user = userRepository.findByUsername(username);
