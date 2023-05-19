@@ -9,7 +9,7 @@
     <nav class="navbar">
       <div class="container-fluid">
         <form class="d-flex" role="search" action="/myweb/board/search" method="get">
-          <input class="form-control me-2" type="search" placeholder="제목 + 내" name="keyword" aria-label="Search">
+          <input class="form-control me-2" type="search" placeholder="제목 + 내용" name="keyword" aria-label="Search">
           <button class="d-flex btn btn-outline-primary" type="submit">Search</button>
         </form>
       </div>

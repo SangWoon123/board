@@ -22,6 +22,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="org.tukorea.board.controller" />
+	<context:component-scan base-package="org.tukorea.board.exception" /> 
 	
 	
 </beans:beans>

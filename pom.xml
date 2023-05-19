@@ -10,7 +10,7 @@
 	<properties>
 		<java-version>1.11</java-version>
 		<org.springframework-version>5.2.22.RELEASE</org.springframework-version>
-		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.aspectj-version>1.9.8</org.aspectj-version>
 		<org.slf4j-version>1.7.36</org.slf4j-version>
 		<logback.version>1.2.11</logback.version>
 	</properties>
@@ -91,6 +91,11 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>	
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
 		
 		<!-- Logging -->
 		<dependency>
@@ -190,7 +195,14 @@
 		    <artifactId>lombok</artifactId>
 		    <version>1.18.26</version>
 		    <scope>provided</scope>
-		</dependency>    
+		</dependency>   
+		<!-- 에러 핸들링 --> 
+		<!-- <dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>6.0.9</version>
+		</dependency> -->
+		 
 	</dependencies>
     <build>
         <plugins>

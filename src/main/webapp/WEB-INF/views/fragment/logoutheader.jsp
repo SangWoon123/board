@@ -19,7 +19,7 @@
   <!-- 상단 네비게이션 바 -->
   <nav class="navbar navbar-dark bg-primary fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/myweb/board">${username}님 반갑습니다!</a>
+      <a class="navbar-brand" href="/myweb/board">${nickname}님 반갑습니다!</a>
       <button type="button" class="btn btn-danger">
       <a href="/myweb/logout" style="color: white; text-decoration: none;">로그아웃</a></button>
 </div>

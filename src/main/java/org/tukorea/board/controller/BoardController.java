@@ -45,7 +45,7 @@ public class BoardController {
 	public String writePost(@RequestParam("title") String title,
 			@RequestParam("content") String content,
 			HttpSession session) throws Exception {
-		String username=(String) session.getAttribute("username");
+		String username=(String) session.getAttribute("nickname");
 		
 		LocalDateTime current=LocalDateTime.now();
 		
@@ -59,7 +59,7 @@ public class BoardController {
 	@GetMapping("/board/{postId}/edit")
     public String showEditForm(@PathVariable("postId") int postId, 
     		HttpSession session,Model model) throws Exception {
-		String uername=(String) session.getAttribute("username");
+		String uername=(String) session.getAttribute("nickname");
 
         Post post = boardService.getByPostId(postId);
         model.addAttribute("post", post);

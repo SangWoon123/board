@@ -27,8 +27,10 @@ public class UserController {
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
                         HttpSession session) throws Exception {
+		User user=userService.findByUsername(username);  // 유저 이름으로 유저정보 반환
+		
         if (userService.authenticateUser(username, password)) {
-            session.setAttribute("username", username);
+            session.setAttribute("nickname", user.getNickname()); //세션으로 닉네임 사용
             return "redirect:/board";
         } else {
             return "login/login";
@@ -48,7 +50,7 @@ public class UserController {
 		return "redirect:/login";	
 	}
 	
-	 @GetMapping("/logout")
+	 @GetMapping("/logout") // 로그아웃
 	    public String logout(HttpSession session) {
 	        session.invalidate();
 	        return "redirect:/login";
