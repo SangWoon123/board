@@ -15,8 +15,8 @@ public class UserService {
 	
 
 	// 인증
-	@Transactional 
-	public boolean authenticateUser(String username,String password) throws Exception {
+	@Transactional(readOnly=true)
+	public boolean authenticateUser(String username,String password) {
 		User user = userRepository.findByUsername(username);
         if (user != null && user.getPassword().equals(password)) {
             return true; // 사용자 인증 성공

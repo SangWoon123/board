@@ -1,4 +1,4 @@
-package org.tukorea.board.create.test;
+package org.tukorea.board.crud.test;
 
 import static org.junit.Assert.assertEquals;
 

@@ -46,6 +46,13 @@
       </div>
     </div>
   </div>
+  
+  <script>
+    var alertScript = "${alertScript}";
+    if (alertScript) {
+        eval(alertScript);
+    }
+</script>
 
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.5/angular.min.js'></script>
