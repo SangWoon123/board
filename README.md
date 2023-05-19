@@ -1,6 +1,9 @@
 # board
 프레임워크 자유과제 23/05/14 ~ 23/05/19
-CRUD, 에러핸들링 (ControllerAdvice) , Transactional 적용,AOP 적용
+
+과제 목표: CRUD, 에러핸들링 (ControllerAdvice) , Transactional 적용,AOP 적용 
+
+~~디자인 미스~~
 
 ### **설계 요구사항**
 
