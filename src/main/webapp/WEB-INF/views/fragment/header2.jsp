@@ -10,6 +10,24 @@
 
   <!-- 문서 제목 -->
   <title>Bootstrap demo</title>
+  
+   <style>
+     .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .custom-form {
+      width: 80%;
+      max-width: 500px;
+    }
+    
+     .form-control-lg {
+      width: 100%;
+    }
+  </style>
 
   <!-- 부트스트랩 CSS 파일 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -17,7 +35,7 @@
 
 <body>
   <!-- 상단 네비게이션 바 -->
-  <nav class="navbar navbar-dark bg-primary fixed-top">
+  <nav class="navbar navbar-dark bg-success fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/myweb/board">${nickname}님 반갑습니다!</a>
 </div>

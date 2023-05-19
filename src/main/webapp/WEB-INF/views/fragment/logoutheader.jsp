@@ -17,7 +17,7 @@
 
 <body>
   <!-- 상단 네비게이션 바 -->
-  <nav class="navbar navbar-dark bg-primary fixed-top">
+  <nav class="navbar navbar-dark bg-success fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/myweb/board">${nickname}님 반갑습니다!</a>
       <button type="button" class="btn btn-danger">
