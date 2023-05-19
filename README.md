@@ -26,6 +26,16 @@
     - 사용자는 제목+내용 등의 검색어를 입력하여 게시글을 검색할 수 있다.
     - 검색된 결과는 최신순으로 정렬된다.
 
+## DB 테이블 (users,posts)
+
+### Users
+
+<img width="450" alt="스크린샷 2023-05-19 오후 4 50 36" src="https://github.com/SangWoon123/board/assets/100204926/25523922-45f4-43ee-9621-448230255652">
+
+### Posts
+
+<img width="421" alt="스크린샷 2023-05-19 오후 4 50 47" src="https://github.com/SangWoon123/board/assets/100204926/c5397325-6c75-4ba8-a791-1a149e7adfb3">
+
 #
 ### 트랜잭션 시나리오 1
 
