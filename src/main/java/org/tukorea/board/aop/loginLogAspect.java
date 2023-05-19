@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class loginAspect {
+public class loginLogAspect {
 	
-	private static final Logger logger = LoggerFactory.getLogger(loginAspect.class);
+	private static final Logger logger = LoggerFactory.getLogger(loginLogAspect.class);
 	
 	@AfterReturning(pointcut = "execution(* org.tukorea.board.service.UserService.authenticateUser(..))", returning = "result")
 	public void loginSuccess(JoinPoint joinPoint, boolean result) {

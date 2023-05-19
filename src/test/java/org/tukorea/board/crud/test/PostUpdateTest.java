@@ -1,4 +1,4 @@
-package org.tukorea.board.create.test;
+package org.tukorea.board.crud.test;
 
 import java.time.LocalDateTime;
 import java.util.List;

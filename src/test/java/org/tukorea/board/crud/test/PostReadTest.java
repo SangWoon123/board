@@ -1,4 +1,6 @@
-package org.tukorea.board.create.test;
+package org.tukorea.board.crud.test;
+
+import static org.junit.Assert.assertEquals;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -6,8 +8,6 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -17,25 +17,31 @@ import org.tukorea.board.service.BoardService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/root-context.xml" })
-public class PostDeleteTest {
+@Transactional
+public class PostReadTest {
 	
 	@Autowired
-	private BoardService bs;
+	BoardService bs;
 	
-	private Logger logger=LoggerFactory.getLogger(PostDeleteTest.class);
-	
-	@Before
-	public void savePost() throws Exception {
+	// create
+	public Post savePost() throws Exception {
 		LocalDateTime current=LocalDateTime.now();
 		Post post=new Post("안녕","내용","유저",current);
-		bs.createPost(post);			
+		bs.createPost(post);
+		
+		return post;
 	}
 	
-	@Test
+	// findBy
 	@Transactional
-	public void deletePost() throws Exception{
-		List<Post> findPosts=bs.getAllPosts();
-		bs.deletePost(findPosts.get(0).getId());		
+	@Test
+	public void findByPost() throws Exception{
+		Post post=savePost();
+		List<Post> findPost=bs.getAllPosts();
+		assertEquals(post.getAuthor(),findPost.get(0).getAuthor());
 	}
+	
+	
+	
 
 }
