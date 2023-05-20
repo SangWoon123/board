@@ -32,7 +32,7 @@
         <a href="/myweb/board/${post.id}/edit">${post.title}</a>
       </td>
       <td scope="row">${post.author}</td>
-      <td scope="row">${post.createdAt}</td>
+       <td scope="row">${post.createdAt}</td>
     </tr>
   </c:forEach>
 </tbody>

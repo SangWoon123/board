@@ -14,6 +14,7 @@
           <textarea class="form-control" rows="3" name="content" required></textarea>
         </div>
         <input type="hidden" name="author" value="${username}">
+            
         <button type="submit" class="btn btn-primary">제출</button>
       </form>
     </div>

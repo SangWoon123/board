@@ -6,9 +6,17 @@
 
 <mapper namespace="org.tukorea.board.mapper.BoardMapper">
 
-<select id="getAllPosts" resultType="org.tukorea.board.domain.Post">
+<select id="getAllPosts" resultMap="postResultMap">
         SELECT * FROM posts ORDER BY created_at DESC
 </select>
+
+<resultMap id="postResultMap" type="org.tukorea.board.domain.Post">
+    <id property="id" column="id" />
+    <result property="title" column="title" />
+    <result property="content" column="content" />
+    <result property="author" column="author" />
+    <result property="createdAt" column="created_at" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+</resultMap>
 
 <select id="getPostById" parameterType="int" resultType="org.tukorea.board.domain.Post">
         SELECT * FROM posts WHERE id = #{postId}
@@ -27,7 +35,7 @@
         DELETE FROM posts WHERE id = #{postId}
     </delete>
     
-    <select id="searchPosts" parameterType="String" resultType="org.tukorea.board.domain.Post">
+    <select id="searchPosts" parameterType="String" resultMap="postResultMap">
         SELECT * FROM posts
         WHERE title LIKE CONCAT('%', #{keyword}, '%') OR content LIKE CONCAT('%', #{keyword}, '%')
         ORDER BY created_at DESC
