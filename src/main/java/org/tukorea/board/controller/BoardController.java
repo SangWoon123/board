@@ -50,8 +50,9 @@ public class BoardController {
 		LocalDateTime current=LocalDateTime.now();
 		
 		Post post=new Post(title,content,username,current);
-	
 		boardService.createPost(post);
+
+		
 		
 		return "redirect:/board";
 	}

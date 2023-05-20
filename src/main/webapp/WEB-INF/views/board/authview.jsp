@@ -51,6 +51,7 @@
         </div>
         <input type="hidden" name="author" value="${username}">
         <input type="hidden" name="postId" value="${post.id}">
+        <input type="hidden" name="postId" value="${post.createdAt}">
         <button type="submit" class="btn btn-primary">수정</button>
         <a href="/myweb/board/${post.id}/delete" class="btn btn-danger">삭제</a>
         <a href="/myweb/board" class="btn btn-primary">게시글로</a>

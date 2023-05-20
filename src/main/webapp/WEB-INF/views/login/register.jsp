@@ -24,7 +24,6 @@
             required
             name="username">
           <input type="password"
-          minlength=6
             ng-model="password"
             class="form-control form-control-password"
             placeholder="Password"
