@@ -17,7 +17,6 @@
         <h2>Sign Up</h2>
         <form class="wrapper-box" role="form" ng-submit="register()" action="/myweb/register" method="post">
           <input type="text"
-          minlength=6
             ng-model="username"
             class="form-control form-control-username"
             placeholder="Username"
