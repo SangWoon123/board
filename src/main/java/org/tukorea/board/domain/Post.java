@@ -2,6 +2,7 @@ package org.tukorea.board.domain;
 
 
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
@@ -12,13 +13,13 @@ public class Post {
     private String title;
     private String content;
     private String author;
-    private LocalDateTime createdAt;
+    private LocalDate createdAt;
     
     public Post() {
     	
     }
     
-	public Post(String title, String content, String author, LocalDateTime createdAt) {
+	public Post(String title, String content, String author, LocalDate createdAt) {
 		// TODO Auto-generated constructor stub
 		this.title=title;
 		this.content=content;
@@ -61,11 +62,11 @@ public class Post {
 	    this.author = author;
 	}
 	
-	public LocalDateTime getCreatedAt() {
+	public LocalDate getCreatedAt() {
 	    return createdAt;
 	}
 	
-	public void setCreatedAt(LocalDateTime createdAt) {
+	public void setCreatedAt(LocalDate createdAt) {
 	    this.createdAt = createdAt;
 	}
 

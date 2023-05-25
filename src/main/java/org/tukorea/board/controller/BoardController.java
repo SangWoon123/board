@@ -1,5 +1,6 @@
 package org.tukorea.board.controller;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -47,7 +48,7 @@ public class BoardController {
 			HttpSession session) throws Exception {
 		String username=(String) session.getAttribute("nickname");
 		
-		LocalDateTime current=LocalDateTime.now();
+		LocalDate current=LocalDate.now();
 		
 		Post post=new Post(title,content,username,current);
 		boardService.createPost(post);
