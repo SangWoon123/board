@@ -192,6 +192,12 @@
     <version>2.12.4</version>
   </dependency>
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin -->
+		<dependency>
+	<groupId>org.projectlombok</groupId>
+	<artifactId>lombok</artifactId>
+	<optional>true</optional>
+</dependency>
+
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok-maven-plugin</artifactId>
@@ -207,7 +213,6 @@
 		    <groupId>org.projectlombok</groupId>
 		    <artifactId>lombok</artifactId>
 		    <version>1.18.26</version>
-		    <scope>provided</scope>
 		</dependency>   
 		<!-- 에러 핸들링 --> 
 		<!-- <dependency>

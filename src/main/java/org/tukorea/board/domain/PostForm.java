@@ -25,35 +25,5 @@ public class PostForm {
 		this.createdAt=createdAt;
 	}
 	
-	public String getTitle() {
-	    return title;
-	}
-	
-	public void setTitle(String title) {
-	    this.title = title;
-	}
-	
-	public String getContent() {
-	    return content;
-	}
-	
-	public void setContent(String content) {
-	    this.content = content;
-	}
-	
-	public String getAuthor() {
-	    return author;
-	}
-	
-	public void setAuthor(String author) {
-	    this.author = author;
-	}
-	
-	public LocalDate getCreatedAt() {
-	    return createdAt;
-	}
-	
-	public void setCreatedAt(LocalDate createdAt) {
-	    this.createdAt = createdAt;
-	}
+
 }
