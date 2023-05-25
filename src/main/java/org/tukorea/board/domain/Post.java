@@ -3,7 +3,6 @@ package org.tukorea.board.domain;
 
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 
 

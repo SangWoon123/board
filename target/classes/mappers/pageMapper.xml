@@ -10,8 +10,8 @@
 </select>
 
 <select id="getPostsByPage" parameterType="java.util.Map" resultType="org.tukorea.board.domain.Post">
-    SELECT * FROM posts ORDER BY created_at DESC
-    LIMIT #{startIndex}, #{pageSize}
+     SELECT *, created_at AS createdAt FROM posts ORDER BY created_at DESC
+  LIMIT #{startIndex}, #{pageSize}
 </select>
 
 </mapper>

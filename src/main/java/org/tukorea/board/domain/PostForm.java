@@ -1,8 +1,6 @@
 package org.tukorea.board.domain;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 import lombok.Getter;
 import lombok.Setter;
 

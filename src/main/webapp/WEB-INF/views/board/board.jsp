@@ -20,19 +20,21 @@
   <table class="table table-hover ">
     <thead>
       <tr>
+      	<th scope="col">글 번호</th>
         <th scope="col">제목</th>
         <th scope="col">작성자</th>
         <th scope="col">작성일</th>
       </tr>
     </thead>
     <tbody>
-  <c:forEach items="${posts}" var="post">
+  <c:forEach items="${posts}" var="post" >
     <tr>
+    <td scope="row">${post.id}</td>
       <td scope="row">
         <a href="/myweb/board/${post.id}/edit">${post.title}</a>
       </td>
       <td scope="row">${post.author}</td>
-       <td scope="row">${post.createdAt}</td>
+        <td scope="row">${post.createdAt}</td>
     </tr>
   </c:forEach>
 </tbody>
@@ -43,14 +45,27 @@
     <a class="btn btn-primary" href="/myweb/board/write" role="button">글쓰기</a>
   </div>
 
+  <!-- 페이지 네이션 -->
   <div class="d-flex justify-content-center">
     <nav aria-label="Page navigation example">
       <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">이전</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">다음</a></li>
+        <li class="page-item">
+          <a class="page-link" href="/myweb/board?page=${currentPage - 1}" aria-label="Previous">
+            이전
+          </a>
+        </li>
+        <c:forEach var="pageNum" begin="1" end="${totalPages}">
+          <li class="page-item <c:if test='${pageNum == currentPage}'>active</c:if>">
+            <a class="page-link" href="/myweb/board?page=${pageNum}">
+              ${pageNum}
+            </a>
+          </li>
+        </c:forEach>
+        <li class="page-item">
+          <a class="page-link" href="/myweb/board?page=${currentPage + 1}" aria-label="Next">
+            다음
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
