@@ -15,7 +15,7 @@
     <result property="title" column="title" />
     <result property="content" column="content" />
     <result property="author" column="author" />
-    <result property="createdAt" column="created_at" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+    <result property="createdAt" column="created_at" javaType="java.time.LocalDate" jdbcType="DATE" />
 </resultMap>
 
 <select id="getPostById" parameterType="int" resultType="org.tukorea.board.domain.Post">

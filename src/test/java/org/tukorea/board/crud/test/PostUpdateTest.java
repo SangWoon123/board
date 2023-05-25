@@ -1,5 +1,6 @@
 package org.tukorea.board.crud.test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class PostUpdateTest {
 	
 	@Before
 	public void savePost() throws Exception {
-		LocalDateTime current=LocalDateTime.now();
+		LocalDate current=LocalDate.now();
 		Post post=new Post("제목","내용","유저",current);
 		bs.createPost(post);
 	}

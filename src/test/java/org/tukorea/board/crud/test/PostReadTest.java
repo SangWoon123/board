@@ -2,6 +2,7 @@ package org.tukorea.board.crud.test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class PostReadTest {
 	
 	// create
 	public Post savePost() throws Exception {
-		LocalDateTime current=LocalDateTime.now();
+		LocalDate current=LocalDate.now();
 		Post post=new Post("안녕","내용","유저",current);
 		bs.createPost(post);
 		
