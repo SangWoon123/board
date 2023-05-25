@@ -4,8 +4,14 @@ package org.tukorea.board.domain;
 
 import java.time.LocalDate;
 
+import lombok.Getter;
+import lombok.Setter;
 
 
+
+
+@Getter
+@Setter
 public class Post {
 		
 	private int id;
@@ -28,45 +34,6 @@ public class Post {
 	
 
 	
-	public int getId() {
-	    return id;
-	}
 
-	public void setId(int id) {
-	    this.id = id;
-	}
-
-	
-	public String getTitle() {
-	    return title;
-	}
-	
-	public void setTitle(String title) {
-	    this.title = title;
-	}
-	
-	public String getContent() {
-	    return content;
-	}
-	
-	public void setContent(String content) {
-	    this.content = content;
-	}
-	
-	public String getAuthor() {
-	    return author;
-	}
-	
-	public void setAuthor(String author) {
-	    this.author = author;
-	}
-	
-	public LocalDate getCreatedAt() {
-	    return createdAt;
-	}
-	
-	public void setCreatedAt(LocalDate createdAt) {
-	    this.createdAt = createdAt;
-	}
 
 }

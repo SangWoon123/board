@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class crudLogAspect {
+public class CrudLogAspect {
 
-	private static final Logger logger = LoggerFactory.getLogger(crudLogAspect.class);
+	private static final Logger logger = LoggerFactory.getLogger(CrudLogAspect.class);
 	
 	@AfterReturning(pointcut = "execution(* org.tukorea.board.service.BoardServiceImpl.* (..))")
 	public void crudLog(JoinPoint jp) {

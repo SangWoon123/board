@@ -20,16 +20,6 @@ public class User {
 		this.nickname=nickname;
 		this.email=email;
 	}
-	
-
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return this.username;
-	}
-	
-	public String getNickname() {
-		return nickname;
-	}
 
 	
 }
