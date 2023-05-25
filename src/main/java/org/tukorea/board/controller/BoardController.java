@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.tukorea.board.domain.Post;
+import org.tukorea.board.persistence.PageRepository;
 import org.tukorea.board.service.BoardService;
 
 @Controller
@@ -23,12 +24,28 @@ public class BoardController {
 	@Autowired
 	BoardService boardService;
 	
+	@Autowired
+	PageRepository pageRepository;
+	
 	@GetMapping("/board")
-	public String showBoard(Model model) throws Exception {
-		List<Post> posts=boardService.getAllPosts();
-		model.addAttribute("posts", posts);
-		return "board/board";
+	public String showBoard(@RequestParam(defaultValue = "1") int page, Model model) throws Exception {
+	    int pageSize = 10; // Number of posts per page
+	    
+	    int startIndex = (page - 1) * pageSize;
+	    List<Post> post=boardService.getAllPosts();
+	    model.addAttribute("p",post);
+	    
+	    List<Post> posts = pageRepository.getPostsByPage(startIndex, pageSize);
+	    model.addAttribute("posts", posts);
+	    
+	    int totalPostsCount = pageRepository.getTotalPostsCount();
+	    int totalPages = (int) Math.ceil((double) totalPostsCount / pageSize);
+	    model.addAttribute("totalPages", totalPages);
+	    model.addAttribute("currentPage", page);
+	    
+	    return "board/board";
 	}
+
 	
 	@GetMapping("/board/{postId}")
     public String showPostOne(@PathVariable("postId") int postId, Model model) throws Exception {

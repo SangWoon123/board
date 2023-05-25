@@ -1,49 +1,49 @@
 package org.tukorea.board.domain;
 
+import java.util.List;
+
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Page {
-	
-	private int page;
-	private int size;
-	private int totalPost;
-	private int totalPage;
-	
-	public Page() {
-		
+@Data
+public class Page<T> {
+    private List<T> content;
+    private int pageNumber;
+    private int pageSize;
+    private int totalElements;
+    private int totalPages;
+	public List<T> getContent() {
+		return content;
 	}
-	
-	public Page(int page, int size, int totalPost) {
-        this.page = page;
-        this.size = size;
-        this.totalPost = totalPost;
-        this.totalPage = (int) Math.ceil((double) totalPost / size);
-    }
-	
-	public int getOffset() {
-        return (page - 1) * size;
-    }
+	public void setContent(List<T> content) {
+		this.content = content;
+	}
+	public int getPageNumber() {
+		return pageNumber;
+	}
+	public void setPageNumber(int pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+	public int getPageSize() {
+		return pageSize;
+	}
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+	public int getTotalElements() {
+		return totalElements;
+	}
+	public void setTotalElements(int totalElements) {
+		this.totalElements = totalElements;
+	}
+	public int getTotalPages() {
+		return totalPages;
+	}
+	public void setTotalPages(int totalPages) {
+		this.totalPages = totalPages;
+	}
     
-    public boolean hasNextPage() {
-        return page < totalPage;
-    }
-    
-    public boolean hasPreviousPage() {
-        return page > 1;
-    }
-    
-    public int getNextPage() {
-        return hasNextPage() ? page + 1 : page;
-    }
-    
-    public int getPreviousPage() {
-        return hasPreviousPage() ? page - 1 : page;
-    }
-	
-	
-	
-
 }
