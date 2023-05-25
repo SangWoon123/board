@@ -3,10 +3,8 @@ package org.tukorea.board.crud.test;
 import static org.junit.Assert.assertEquals;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

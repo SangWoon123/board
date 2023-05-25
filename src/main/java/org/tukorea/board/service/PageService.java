@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.tukorea.board.domain.Page;
 import org.tukorea.board.domain.Post;
-import org.tukorea.board.persistence.BoardRepository;
 import org.tukorea.board.persistence.PageRepository;
 
 @Service
@@ -19,7 +18,7 @@ public class PageService {
 		 int totalElements = postRepository.getTotalPostsCount();
 	     int totalPages = (int) Math.ceil((double) totalElements / pageSize);
 		
-	     if(pageNumber<1) {
+	     if(pageNumber <1) {
 	    	 pageNumber=1;
 	     }else if(pageNumber>totalPages) {
 	    	 pageNumber=totalPages;

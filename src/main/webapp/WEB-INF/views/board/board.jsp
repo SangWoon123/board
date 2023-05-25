@@ -27,14 +27,14 @@
       </tr>
     </thead>
     <tbody>
-  <c:forEach items="${p}" var="post">
+  <c:forEach items="${posts}" var="post" >
     <tr>
     <td scope="row">${post.id}</td>
       <td scope="row">
         <a href="/myweb/board/${post.id}/edit">${post.title}</a>
       </td>
       <td scope="row">${post.author}</td>
-       <td scope="row">${post.createdAt}</td>
+        <td scope="row">${post.createdAt}</td>
     </tr>
   </c:forEach>
 </tbody>

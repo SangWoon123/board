@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,15 +21,15 @@ public class loginLogAspect {
 	public void loginSuccess(JoinPoint joinPoint, boolean result) {
 		Object[] args = joinPoint.getArgs();
         String username = (String) args[0];
-        String password = (String) args[1];
+        //String password = (String) args[1];
         
         if (result) {
-            logger.info("Successful login - Username: {}", username);
+            logger.info("로그인 성공 - Username: {}", username);    
         } else {
         	String script = "alert('잘못된 접근입니다.아이디와 비밀번호를 확인해주세요.');";
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
             request.setAttribute("alertScript", script);
-            logger.info("Login failed - Username: {}", username);
+            logger.info("로그인 시도 실패 - Username: {}", username);
         }
 	}
 	
